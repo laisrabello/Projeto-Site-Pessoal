@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>Projeto-Site-Pessoal</title>
+</head>
+<body>
+    <nav>
+       <i id="iconCupHot" class="bi bi-cup-hot"></i>
+       <ul id="navBarLinks">
+            <li><a href="#homeSection">Início</a></li>
+            <li><a href="#aboutSection">Sobre mim</a></li>
+            <li><a href="#skillsSection">Habilidades</a></li>
+            <li><a>Projetos</a></li>
+            <li><a href="#contactSection">Contato</a></li> 
+       </ul> 
+    </nav>
+    <section id="homeSection">
+        <div id="homePhoto" ></div>
+        <div id="homeContent">
+            <div>
+                <h1>Laís Rabello</h1>
+                <h2>Desenvolvedora Frontend</h2>
+                <a id="downloadButton" href="source/Lais-Rabello.pdf" download="Lais-Rabello.pdf">
+                    <i class="bi bi-box-arrow-down"></i>
+                    <p>Baixar Currículo</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="aboutSection">
+        <div id="aboutPhoto"></div>
+        <div id="aboutContentFlexContainer">
+            <div id="aboutContentFlexItems">
+                <h1>Sobre mim</h1>
+                <p>
+                    Olá! Eu sou a Laís, sou natural do Rio de Janeiro, e atuo como Desenvolvedora Frontend.
+                    Na minha jornada como Dev tenho experiência com HTML, CSS, JavaScript e Bootstrap para 
+                    desenvolvimento web, e com Git e GitHub para controle e versionamento de código. Sou 
+                    formada em Física pela Universidade Federal Fluminense, com experiência profissional 
+                    em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinares 
+                    me concedem habilidades muito importantes como Adaptabilidade, Resolução de Problemas,
+                    Aprendizado contínuo e Gestão de Tempo e Processos. 
+                </p>
+                <button id="aboutButton" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/', 'blank')">
+                    <i class="bi bi-arrow-right"></i>
+                    Confira meu Linkedin    
+                </button>
+            </div>
+        </div>    
+    </section>
+    <section id="skillsSection">
+        <div id="overlay">
+            <h1>Habilidades</h1>
+            <h2>Técnicas</h2>
+            <ul>
+                <li class="liSkillSection">HTML</li>
+                <li class="liSkillSection">CSS</li>
+                <li class="liSkillSection">JavaScript</li>
+                <li class="liSkillSection">Bootstrap</li>
+                <li class="liSkillSection">GIT</li>
+                <li class="liSkillSection">GitHub</li>
+            </ul>
+            <h2>Comportamentais</h2>
+            <ul>
+                <li class="liSkillSection">Inglês</li>
+                <li class="liSkillSection">Adaptabilidade</li>
+                <li class="liSkillSection">Trabalho em Equipe</li>
+                <li class="liSkillSection">Aprendizado Contínuo</li>
+                <li class="liSkillSection">Resolução de Problemas</li>
+                <li class="liSkillSection">Gestão de Tempo e Processos</li>
+            </ul>   
+        </div>
+    </section>
+    <section id="contactSection">
+        <div id="contactPhoto"></div>
+        <div id="contactContentFlexContainer">
+            <div id="contactContentFlexItems"> 
+                <h1>Contato</h1>
+                <h2>Essas são as formas de entrar em contato comigo.</h2>
+                <h2>Aguardo sua mensagem!</h2>
+                <div id="divEmail">
+                    <i class="bi bi-envelope-fill"></i>
+                    <p>laisrabellocode@gmail.com</p>
+                </div>
+                <div id="divCellphone">
+                    <i class="bi bi-whatsapp"></i>
+                    <p>+55 (21) 96946-2827</p>
+                </div>
+                <div id="divContacButtons">
+                    <button class="contactButtons" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/','blank')"> 
+                        <i class="bi bi-linkedin"></i> 
+                    </button>
+                    <button class="contactButtons" onClick="window.open('https://github.com/laisrabello','blank')"> 
+                        <i class="bi bi-github"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
