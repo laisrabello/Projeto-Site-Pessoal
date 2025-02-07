@@ -3,7 +3,7 @@
 }
 
 section{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 nav{
@@ -43,20 +43,20 @@ nav{
         background-position: center;
     }
 
-    #homeContent{
+    #homeContentFlexContainer{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 60vw;
 
-        h1{
+        #h1HomeSection{
             color: #ededed;
             font-size: 5rem;
             text-transform: uppercase;
         }
     
-        h2{
+        #h2HomeSection{
             color: #a5a4a4;
             font-size: 2.5rem;
             font-weight: 300;
@@ -74,6 +74,7 @@ nav{
     height: 50px;
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.6s;
 
     i {
         font-size: 20px;
@@ -90,8 +91,7 @@ nav{
 } 
 
 #downloadButton:hover{
-    width: 230px;
-    height: 60px;
+    transform: scale(1.1);
     background-color: #da8aff;
 }
 
@@ -120,6 +120,8 @@ nav{
     #aboutContentFlexItems{
         width: 70%;
         max-width: 700px;
+        text-align: justify;
+        
         h1{
             color: #ededed;
             font-size: 4rem;
@@ -149,6 +151,7 @@ nav{
     font-weight: 100;
     padding: 10px 15px 10px 15px;
     border: none;
+    transition: 0.6s;
 
     i{
         padding-right: 20px;
@@ -157,48 +160,45 @@ nav{
 
 #aboutButton:hover{
     background-color: #22222270;
-    padding: 12px 27px 12px 27px;
-    font-size: 1.2rem;
+    transform: scale(1.1);
 
 }
 
 #skillsSection{
     background-image: url(assets/photos/andrew-neel-cckf4TsHAuw-unsplash.jpg);    
-    background-size: cover;
-    
-    #overlay{
-        background-color: #ededed99;
-        width: 100vw;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    background-size: cover;   
+}
 
-        h1{
-            display: flex;
-            justify-content: center;
-            padding-top: 150px;
-            font-size: 4rem;
-            color: #222222;
-            text-transform: uppercase;
-        }
+#overlay{
+    background-color: #ededed99;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-        h2{
-            color: #222222;
-            font-size: 2.5rem;
-            padding-top: 100px;
-            padding-bottom: 60px; 
-        }
+    h1{
+        font-size: 4rem;
+        color: #222222;
+        text-transform: uppercase;
+    }
 
-        ul{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1000px;
-            gap: 27px;
-        }
-    }   
+    h2{
+        color: #222222;
+        font-size: 2.5rem;
+        padding-top: 100px;
+        padding-bottom: 60px; 
+    }
+}
+
+.ulSkillsItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    gap: 27px;
 }
 
 .liSkillSection {
@@ -209,10 +209,11 @@ nav{
     align-self: center;
     padding: 10px 10px 10px 10px;
     border-radius: 10px;
+    transition: 0.6s;
 }
 
 .liSkillSection:hover{
-    padding: 15px 15px 15px 15px;
+    transform: scale(1.1);
     background-color: #a065bb;
 }
 
@@ -262,7 +263,7 @@ nav{
     font-size: 1.4rem;
     color: #ededed;
     font-weight:200;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
     padding-top: 58px;
     p{
         padding-left: 10px;
@@ -274,7 +275,7 @@ nav{
     font-size: 1.3rem;
     color: #ededed;
     font-weight:200;
-    padding-bottom: 8px;
+    padding-bottom: 10px;
 
     p{
         padding-left: 8px;
@@ -293,21 +294,192 @@ nav{
     padding: 8px 8px 8px 8px;
     cursor: pointer;
     background-color: #ededed;
+    transition: 0.8s;
 
     i{
         display: flex;
         align-items: center;
         color:#58683e;
+        
     }
 }
 
 .contactButtons:hover{
-    width: 56px;
-    height: 56px;
-    font-size: 40px;
+    transform:scale(1.1);
     background-color: #ededed99;
 
     i{
         color: #ededed;
+    }
+}
+
+@media (orientation: portrait) {
+
+    nav{
+        padding: 18px 45px;
+    
+        #iconCupHot{
+            font-size: 25px;
+        }
+
+        #navBarLinks{
+            font-weight: 330;
+
+            li{
+               padding-left: 50px; 
+            }
+        }
+    }
+
+    #homeSection{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 6rem;
+
+        #homePhoto{            
+            width: 30vh;
+            height: 30vh;
+            border-radius: 50%;
+        }
+
+        #homeContentFlexContainer{
+            text-align: center;
+
+            #homeContentFlexItems{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                #h1HomeSection{
+                    font-size: 3rem;
+                }
+            
+                #h2HomeSection{
+                    font-size: 1.35rem;
+                    font-weight: 100;
+                }
+            }
+        }
+    }
+
+    #aboutPhoto{
+        display: none;
+    }
+
+    #aboutContentFlexContainer{
+        width: 100vw;
+    
+        #aboutContentFlexItems{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            
+            h1{
+                font-size: 2.5rem;
+            }
+        
+            p{
+                font-size: 1.2rem;
+                font-weight: 100;
+                padding: 40px 0px 40px 0px;
+                
+            }    
+        }
+    }
+
+    #overlay{
+    
+        h1{
+            font-size: 2.8rem;
+        }
+    
+        h2{
+            font-size: 2rem;
+            padding-top: 60px;
+            padding-bottom: 30px; 
+        }
+    }
+    
+    .ulSkillsItems {
+        max-width: 350px;
+        gap: 25px;
+    }
+    
+    .liSkillSection {
+        font-size: 1.2rem;
+        padding: 9px 9px 9px 9px;
+    }
+
+    #contactSection{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+        
+    #contactPhoto{
+        height: 25vh;
+        width: 25vh;
+        border-radius: 50%;
+        border: solid #ededed 4px;
+    }
+    
+    #contactContentFlexContainer{
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        #contactContentFlexItems{
+            width: 65%;
+            max-width: 600px;
+
+            h1{
+                font-size: 2.8rem;
+                padding-top: 80px;
+                padding-bottom: 40px;
+            }
+        
+            h2{
+                font-size: 1.2rem;
+                font-weight:100;
+            }
+        }
+    }
+    
+    #divEmail{
+        font-size: 1.2rem;
+        font-weight:100;
+        padding-top: 80px;
+        justify-content: center;        
+
+        p{
+            padding-left: 10px;
+        }
+    }
+    
+    #divCellphone{
+        font-size: 1.2rem;
+        font-weight:100;
+        justify-content: center;
+    
+        p{
+            padding-left: 8px;
+        }
+    }
+    
+    #divContacButtons{
+        padding-top: 50px;
+        justify-content: center;
+    }
+}
+
+
+@media (max-width: 770px) {
+    nav{
+        display: none;
     }
 }
