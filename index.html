@@ -8,102 +8,233 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
     <title>Projeto-Site-Pessoal</title>
 </head>
 <body>
     <nav>
-       <i id="iconCupHot" class="bi bi-cup-hot"></i>
        <ul id="navBarLinks">
             <li><a href="#homeSection">Início</a></li>
             <li><a href="#aboutSection">Sobre mim</a></li>
-            <li><a href="#skillsSection">Habilidades</a></li>
-            <li><a>Projetos</a></li>
-            <li><a href="#contactSection">Contato</a></li> 
-       </ul> 
+            <li><a href="#projectsSection">Projetos</a></li>
+            <li><a href="#contactSection">Contato</a></li>
+       </ul>
+       <div id="localAndTime">
+            <span id="localization">Rio de Janeiro, Brasil</span>
+            <span id="localTime"></span> 
+       </div>
+       <label id="switch">
+            <input type="checkbox" id="toggleDarkMode">
+            <span id="slider"></span>
+       </label> 
     </nav>
-    <section id="homeSection">
-        <div id="homePhoto" ></div>
-        <div id="homeContentFlexContainer">
-            <div id="homeContentFlexItems">
-                <h1 id="h1HomeSection">Laís Rabello</h1>
-                <h2 id="h2HomeSection">Desenvolvedora Frontend</h2>
-                <a id="downloadButton" href="source/Lais-Rabello.pdf" download="Lais-Rabello.pdf">
-                    <i class="bi bi-box-arrow-down"></i>
-                    <p>Baixar Currículo</p>
-                </a>
-            </div>
-        </div>
-    </section>
-    <section id="aboutSection">
-        <div id="aboutPhoto"></div>
-        <div id="aboutContentFlexContainer">
-            <div id="aboutContentFlexItems">
-                <h1>Sobre mim</h1>
-                <p>
-                    Olá! Eu sou a Laís, sou natural do Rio de Janeiro, e atuo como Desenvolvedora Frontend.
-                    Na minha jornada como Dev tenho experiência com HTML, CSS, JavaScript e Bootstrap para 
-                    desenvolvimento web, e com Git e GitHub para controle e versionamento de código. Sou 
-                    formada em Física pela Universidade Federal Fluminense, com experiência profissional 
-                    em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinares 
-                    me concedem habilidades muito importantes como Adaptabilidade, Resolução de Problemas,
-                    Aprendizado contínuo e Gestão de Tempo e Processos. 
-                </p>
-                <button id="aboutButton" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/', 'blank')">
-                    <i class="bi bi-arrow-right"></i>
-                    Confira meu Linkedin    
-                </button>
-            </div>
-        </div>    
-    </section>
-    <section id="skillsSection">
-        <div id="overlay">
-            <h1>Habilidades</h1>
-            <h2>Técnicas</h2>
-            <ul class="ulSkillsItems">
-                <li class="liSkillSection">HTML</li>
-                <li class="liSkillSection">CSS</li>
-                <li class="liSkillSection">JavaScript</li>
-                <li class="liSkillSection">Bootstrap</li>
-                <li class="liSkillSection">GIT</li>
-                <li class="liSkillSection">GitHub</li>
-            </ul>
-            <h2>Comportamentais</h2>
-            <ul class="ulSkillsItems">
-                <li class="liSkillSection">Inglês</li>
-                <li class="liSkillSection">Adaptabilidade</li>
-                <li class="liSkillSection">Trabalho em Equipe</li>
-                <li class="liSkillSection">Aprendizado Contínuo</li>
-                <li class="liSkillSection">Resolução de Problemas</li>
-                <li class="liSkillSection">Gestão de Tempo e Processos</li>
-            </ul>   
-        </div>
-    </section>
-    <section id="contactSection">
-        <div id="contactPhoto"></div>
-        <div id="contactContentFlexContainer">
-            <div id="contactContentFlexItems"> 
-                <h1>Contato</h1>
-                <h2>Essas são as formas de entrar em contato comigo.</h2>
-                <h2>Aguardo sua mensagem!</h2>
-                <div id="divEmail">
-                    <i class="bi bi-envelope-fill"></i>
-                    <p>laisrabellocode@gmail.com</p>
+    <div id="bubbleButtons">
+        <button class="bubbleButton" onClick="window.open('https://github.com/laisrabello', 'blank')">
+            <i i class="bi bi-github"></i>
+        </button>
+        <button class="bubbleButton" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/', 'blank')">
+            <i i class="bi bi-linkedin"></i>
+        </button>
+        <button class="bubbleButton" onClick="window.open('https://wa.me/5521969462827', 'blank')">
+            <i i class="bi bi-whatsapp"></i>
+        </button>
+    </div>
+    <div class="container">
+        <section id="homeSection">
+            <div id="heroSection">
+                <div id="heroSectionContainer1">
+                    <div id="homePhoto"></div>
+                    <h1>Olá! Eu sou Laís Rabello</h1>
                 </div>
-                <div id="divCellphone">
-                    <i class="bi bi-whatsapp"></i>
-                    <p>+55 (21) 96946-2827</p>
-                </div>
-                <div id="divContacButtons">
-                    <button class="contactButtons" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/','blank')"> 
-                        <i class="bi bi-linkedin"></i> 
-                    </button>
-                    <button class="contactButtons" onClick="window.open('https://github.com/laisrabello','blank')"> 
-                        <i class="bi bi-github"></i>
-                    </button>
+                <div id="heroSectionContainer2">
+                    <h2>Desenvolvedora Web</h2>
+                    <h3>Vamos criar experiências digitais incríveis juntos!</h3>
+                    <div id="alignHeroButtons">
+                        <a id="downloadCurriculum" href="source/Lais-Rabello.pdf" download="Lais-Rabello.pdf">
+                            <i class="bi bi-box-arrow-down"></i>
+                            <p>Baixar Currículo</p>
+                        </a>
+                        <a id="seeMyWork" href="#projectsSection">
+                            <p>Veja meu trabalho</p>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div id="homeSectionPart2">
+                <div id="knowMeBetter">
+                    <h3>Me conheça melhor</h3>
+                    <h4>Resido no Rio de Janeiro, Brasil, e atuo como Desenvolvedora Web Frontend, com experiência em HTML, CSS, JavaScript, Bootstrap, Git e GitHub. Sou formada em Física pela Universidade Federal Fluminense e tenho experiência profissional em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinar me proporcionam habilidades essenciais, como adaptabilidade, resolução de problemas, aprendizado contínuo e gestão de tempo e processos.</h4>
+                </div>
+                <div class="timeLineContainer1">
+                    <ul>
+                        <li>
+                            <div class="date">
+                                <h5>2017</h5>
+                            </div>
+                            <div class="point"></div>
+                            <div class="content">
+                                <p>Início da graduação de Física</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <h5>2018-2019</h5>
+                            </div>
+                            <div class="point"></div>
+                            <div class="content">
+                                <p>Iniciação Científica e Estágio no Laboratório de Difração de Raios X</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date">
+                                <h5>2020-2021</h5>
+                            </div>
+                            <div class="point"></div>
+                            <div class="content">
+                                <p>Professora de Física no projeto social Pré-Vestibular Social Novo Saber</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>  
+        </section>
+        <section id="aboutSection">
+            <div id="aboutPhoto"></div>
+            <div class="timeLineContainer2">
+                <ul>
+                    <li>
+                        <div class="date">
+                            <h5>2021-2022</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <p>Estágio Administrativo na Reitoria da Universidade Federal Fluminense</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <h5>2022</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <p>Término da graduação de Física</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <h5>2022</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <p>Início da graduação de Engenharia de Telecomunicações</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <h5>2022-2023</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <p>Analista de Conteúdo e Projetos na Empresa Júnior Meta Consultoria</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <h5>2023-2024</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <p>Assistente Técnica de Planejamento - TSE (Toyo Setal) em UPGN Itaboraí</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="date" id="todayDate">
+                            <h5>Atualmente</h5>
+                        </div>
+                        <div class="point"></div>
+                        <div class="content">
+                            <div id="todayContent">
+                                <p>Desenvolvedora Web</p>
+                                <div class="skillsBox">
+                                    <img src="assets/icons/icons8-html (1) 1.svg" alt="HTML">
+                                    <img src="assets/icons/icons8-css3 1.svg" alt="CSS">
+                                    <img src="assets/icons/icons8-javascript 1.svg" alt="JavaScript">
+                                    <img src="assets/icons/icons8-git 1.svg" alt="Git">
+                                    <img src="assets/icons/icons8-github 1.svg" alt="GitHub">
+                            </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul> 
+            </div>
+        </section>
+        <section id="projectsSection">
+            <h1>Conheça meu trabalho</h1>
+            <div class="carousel">
+                <div id="projectsAndDot">
+                    <div id="projects">
+                        <div class="project">
+                            <img class="projectPhoto" src="assets/photos/Site-Links.png" alt="Projeto 1">
+                            <h2>Site Links</h2>
+                            <h3>Pessoal</h3>
+                            <h4>Janeiro 2025</h4>
+                            <h5>Site que reúne links para minhas redes sociais de forma intuitiva. Desenvolvido com HTML e CSS, utilizando ícones do Bootstrap.</h5>
+                            <button onClick="window.open('https://laisrabello.github.io/projeto-site-links/', 'blank')"> Veja detalhes </button>
+                        </div>
+                        <div class="project">
+                            <img class="projectPhoto" src="assets/photos/Site-Pessoal.png" alt="Projeto 2">
+                            <h2>Portfólio Pessoal</h2>
+                            <h3>Pessoal</h3>
+                            <h4>Fevereiro 2025</h4>
+                            <h5>Site criado para me apresentar e expor meu trabalho como Desenvolvedora Web, incluindo minhas experiências anteriores. Desenvolvido com HTML, CSS e JavaScript, com ícones do Bootstrap.</h5>
+                            <button onClick="window.open('https://laisrabello.github.io/Projeto-Site-Pessoal/','blank')"> Veja detalhes </button>
+                        </div>
+                        <div class="project">
+                            <img class="projectPhoto" src="assets/photos/To-Do-List.png" alt="Projeto 3">
+                            <h2>To Do List</h2>
+                            <h3>Pessoal</h3>
+                            <h4>Fevereiro 2025</h4>
+                            <h5>Site com objetivo de criar uma lista das suas tarefas diárias, podendo exluir e marcar como feita. Desenvolvido com HTML e CSS e JavaScript.</h5>
+                            <button onClick="window.open('https://laisrabello.github.io/Projeto-To-Do-List/', 'blank')">Veja detalhes</button>
+                        </div>
+                    </div>
+                    <div class="indicators">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contactSection">
+            <div id="contactBiggerContainer">
+                <div id="contactSectionContainer1">
+                    <div id="contactPhoto"></div>
+                    <h1>Vamos Conversar!</h1>
+                    <h2>Gostou do meu trabalho? Ficarei feliz em conversar sobre como posso contribuir para sua equipe ou projeto. Entre em contato!</h2>
+                </div>
+                <div id="contactSectionContainer2">
+                    <form>
+                        <div>
+                            <label for="name">Nome:</label>
+                            <input id="name" placeholder="Ex.: Laís Rabello " required/> 
+                        </div>
+                        <div>
+                            <label for="email">Email:</label>
+                            <input id="email" type="email" placeholder="Ex.: laisrabellocode@gmail.com" required/> 
+                        </div>
+                        <div>
+                            <label for="message">Mensagem:</label>
+                            <textarea id="message" placeholder="Ex.: Olá, gostei muito do seu trabalho e gostaria de conversar mais!" required></textarea>
+                        </div>
+                        <button>Vamos Conversar</button>
+                    </form> 
+                </div>
+            </div>
+            <div id="copyRight">
+                <h1>© 2025 Laís Rabello. Todos os direitos reservados.</h3>
+            </div>
+        </section>
+    </div>
+    <script src="script.js" ></script>
 </body>
 </html>

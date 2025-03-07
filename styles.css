@@ -1,482 +1,758 @@
+html{
+    scroll-behavior: smooth;
+}
+
 *{
-    font-family: Rubik, sans-serif;
+    font-family: "League Spartan", serif;
+}
+
+.container{
+    scroll-snap-type: y proximity;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 section{
-    min-height: 100vh;
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
 }
 
 nav{
-    background-color: #ededed;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     position: fixed;
-    width: 100%;
-    padding: 18px 65px;
-    box-shadow: 0px 4px 4px 0px #ffffff25;
+    justify-content: space-around;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    right: 0;
 
-    #iconCupHot{
-        font-size: 30px;
-    }
     #navBarLinks{
         display: flex;
-        font-size: 1.1rem;
-        font-weight: 370;
+        font-size: 1rem;
+        /* padding-left: 560px; */
+        padding-top: 24px;
+
         li{
-           padding-left: 60px; 
+           padding-left: 60px;
+           font-weight: 300;
         }
+    }
+}
+
+#localAndTime{
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    /* padding-left: 120px; */
+    gap: 8px;
+
+    #localization{
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #00000070;
+    }
+
+    #localTime{
+        color: #000000;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+}
+
+/* estiliza o container do botão */
+#switch{
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    margin-top: 24px;
+    /* margin-left: 500px; */
+}
+
+/* esconde o input padrão */
+#switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* estiliza a base do botão */
+#slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #e0e0e0;
+    border-radius: 30px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 6px #bababa, inset -4px -4px 6px #f2f1f1;
+}
+
+/* estiliza o círculo que desliza */
+#slider::before{
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 3px;
+    bottom: 3px;
+    background: #ffffff;
+    border-radius: 50%;
+    transition: 0.3s;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* quando ativado (modo escuro) */
+input:checked + #slider{
+    background: #222;
+    box-shadow: 
+    inset 6px 6px 10px rgba(0, 0, 0, 0.6),  /* Sombra interna escura */
+    inset -6px -6px 10px rgba(255, 255, 255, 0.2), /* Destaque para relevo */
+    2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra externa para profundidade */
+}
+
+input:checked + #slider::before{
+    transform: translateX(40px);
+    background: #ffffff;
+}
+
+#bubbleButtons{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 10;
+    align-items: flex-end;
+    padding-right: 40px;
+    padding-top: 128px;
+    gap: 16px;
+    right: 0;
+
+    .bubbleButton{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #ffffff;
+        cursor: pointer;
+        box-shadow: 4px 4px 4px 0px #00000025, inset 2px 2px 4px 0px #00000025;
+        transition: 0.5s;
+
+        i{
+            font-size: 22px;
+        }
+    }
+
+    .bubbleButton:hover{
+        transform: scale(1.1);
     }
 }
 
 #homeSection{
-    background-color: #222222;
-    padding-top: 65px;
     display: flex;
-    justify-content: space-between;
-
-    #homePhoto{
-        background-image: url(assets/photos/Imagem\ do\ WhatsApp\ de\ 2024-10-21\ à\(s\)\ 16.01.25_de2365c2.jpg);
-        width: 40vw;
-        height: 100vh - 65px;
-        background-size: cover;
-        background-position: center;
-    }
-
-    #homeContentFlexContainer{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 60vw;
-
-        #h1HomeSection{
-            color: #ededed;
-            font-size: 5rem;
-            text-transform: uppercase;
-        }
-    
-        #h2HomeSection{
-            color: #a5a4a4;
-            font-size: 2.5rem;
-            font-weight: 300;
-            padding: 24px 0px 64px 0px;
-        }     
-    }  
+    flex-direction: column;
+    max-width: 100vw;
+    height: 100vh;
 }
 
-#downloadButton{
+#heroSection{
+    display: flex;
+    justify-content: center;
+    max-width: 100vw;
+    height: 640px;
+    padding-top: 162px;
+    gap: 300px;
+}
+
+#heroSectionContainer1{
+    max-width:580px;
+    max-height: 304;
+    padding-left: 178px;
+
+    #homePhoto{
+        background-image:url(assets/photos/fhdfhndgjndgn.png);
+        max-width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    
+    h1{
+        font-size:4.5rem;
+        font-weight:500;
+        color: #000000;
+        letter-spacing:0.125rem;
+        padding-top: 40px; 
+    }
+
+}
+
+#heroSectionContainer2{
+    max-width:580px;
+    max-height: 304;
+    padding-top: 10px;
+    padding-right: 178px;
+
+    h2{
+        font-size: 3rem;
+        font-weight: 400;
+        color: #000000;
+        letter-spacing:0.0625rem;
+        padding-bottom: 8px; 
+    }
+
+    h3{
+       font-size: 1.5rem;
+       font-weight: 400;
+       color: #00000070;
+       padding-bottom: 80px; 
+    }
+
+    #alignHeroButtons{
+        display: flex;
+        gap: 30px;
+    }
+
+}
+
+#downloadCurriculum{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #a065bb;
-    width: 220px;
+    background-color: #000000;
+    width: 190px;
     height: 50px;
-    border-radius: 10px;
+    border-radius: 16px;
     cursor: pointer;
     transition: 0.6s;
+    box-shadow: 0px 4px 4px 0px #00000025;
 
     i {
-        font-size: 20px;
-        color: #ededed;
-        padding-right: 7px;
+        font-size: 1rem;
+        color: #ffffff;
+        padding-right: 17px;
     }
 
     p {
-        font-size: 1.15rem;
-        font-weight: 300;
-        color: #ededed;
-        padding-left: 7px;
+        font-size: 1rem;
+        color: #ffffff;
     }
 } 
 
-#downloadButton:hover{
+#seeMyWork{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    width: 190px;
+    height: 50px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: 0.6s;
+    box-shadow: 0px 4px 4px 0px #00000025;
+
+    p {
+        font-size: 1rem;
+        color: #000000;
+    }
+}
+
+#downloadCurriculum:hover{
     transform: scale(1.1);
-    background-color: #da8aff;
+}
+
+#seeMyWork:hover{
+    transform: scale(1.1);
+}
+
+#homeSectionPart2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f0;
+    max-height: 384px;
+    max-width: 100vw;
+}
+
+#knowMeBetter{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:40vw;
+    height: 384px;
+    padding-left: 178px;
+    gap: 24px;
+
+    h3{
+        font-size: 2rem;
+        font-weight: 400;
+        color: #000000;
+    }
+
+    h4{
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #00000070;
+    }
+}
+
+.timeLineContainer1{
+    width: 60vw;
+    height: 384px;
+    position: relative;
+}
+
+.timeLineContainer1::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    background-color: #333;
+}
+
+.timeLineContainer1 ul {
+    margin-top: 48px;
+}
+
+.timeLineContainer1 ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 64px;
+    list-style-type: none;
+}
+
+.timeLineContainer1 ul li .date {
+    width: 50%;
+    margin-right: 64px;
+}
+
+.timeLineContainer1 ul li .content {
+    width: 50%;
+    margin-right: 64px;
+}
+
+.timeLineContainer1 ul li .content p {
+    max-width: 15vw;
+    font-size: 1.1rem;
+}
+
+.timeLineContainer1 ul li .date h5 {
+    font-size: 1.1rem;
+}
+
+.timeLineContainer1 ul li:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.timeLineContainer1 ul li:nth-child(odd) .date h5 {
+    float: right;
+}
+
+.timeLineContainer1 ul li:nth-child(even) .date h5 {
+    margin-left: 64px;
+}
+
+.timeLineContainer1 ul li:nth-child(even) .content p {
+    float: right;
+    text-align: end;
+}
+
+.timeLineContainer1 ul li:nth-child(odd) .content p {
+    margin-left: 64px;
+}
+
+.point {
+    min-width: 15px;
+    min-height: 15px;
+    background-color: #333;
+    border-radius: 100%;
+    position: relative;
+}
+
+.timeLineContainer2{
+    width: 60vw;
+    height: 100vh;
+    position: relative;
+}
+
+.timeLineContainer2::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    left: 50%;
+    background-color: #333;
+}
+
+.timeLineContainer2 ul {
+    margin-top: 184px;
+}
+
+.timeLineContainer2 ul li {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    margin-bottom: 56px;
+    list-style-type: none;
+}
+
+.timeLineContainer2 ul li .date {
+    width: 50%;
+    margin-right: 64px;
+}
+
+.timeLineContainer2 ul li .content {
+    width: 50%;
+    margin-right: 64px;
+}
+
+.timeLineContainer2 ul li .content p {
+    max-width: 15vw;
+    font-size: 1.1rem;
+}
+
+.timeLineContainer2 ul li .date h5 {
+    font-size: 1.1rem;
+}
+
+.timeLineContainer2 ul li:nth-child(odd){
+    flex-direction: row-reverse;
+}
+
+.timeLineContainer2 ul li:nth-child(even) .date h5 {
+    float: right;
+}
+
+.timeLineContainer2 ul li:nth-child(odd) .date h5 {
+    margin-left: 64px;
+}
+
+.timeLineContainer2 ul li:nth-child(odd) .content p {
+    float: right;
+    text-align: end;
+}
+
+.timeLineContainer2 ul li:nth-child(even) .content p {
+    margin-left: 64px;
+    text-align: start;
+}
+
+.timeLineContainer2 ul li #todayDate h5 {
+    font-size: 1.5rem;
+}
+
+.timeLineContainer2 ul li #todayContent p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.timeLineContainer2 ul li #todayContent {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 15vw;
+    gap: 16px;
+    background-color: #ffffff;
+    margin-left: 64px;
+    border-radius: 26px;
+    padding: 24px;
+}
+
+.timeLineContainer2 ul li .skillsBox img{
+    margin-right: 24px;
+}
+
+.timeLineContainer2 ul li .skillsBox img:nth-child(n+3) {
+    margin-top: 16px;
 }
 
 #aboutSection{
-    background-color: #a065bb;
+    background-color: #f5f5f0;
     display: flex;
-    justify-content: space-between;
-    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    max-width: 100vw;
+    max-height: 100vh;
 
     #aboutPhoto{
-        background-image: url(assets/photos/MYJF4755.JPG);
+        background-image: url(assets/photos/lais.JPG);
         width: 40vw;
-        height: 100vh;
-        background-size: cover;
+        height: 700px;
         background-position: center;
+        border-radius: 0px 126px 126px 0px;
     } 
 }
 
-#aboutContentFlexContainer{
-    width: 60vw;
+#projectsSection{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    max-height: 100vh;
+    max-width: 100vw;
 
-    #aboutContentFlexItems{
-        width: 70%;
-        max-width: 700px;
-        text-align: justify;
-        
-        h1{
-            color: #ededed;
-            font-size: 4rem;
-            text-transform: uppercase;
-        }
-    
-        p{
-            color: #ededed;
-            font-size: 1.4rem;
-            font-weight: 300;
-            line-height: 1.8rem;
-            padding: 40px 0px 100px 0px;
-            
-        }    
+    h1 {
+        padding: 128px 0px 0px 200px;
+        font-size: 2rem;
     }
 }
 
-#aboutButton {
+.carousel{
+    max-width: 100vw;
+    height: 800px;
+    position: relative;
+}
+
+#projectsAndDot{
     display: flex;
     align-items: center;
-    width: fit-content;
-    background-color: #222222;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #ededed;
-    font-size: 1.1rem;
-    font-weight: 100;
-    padding: 10px 15px 10px 15px;
-    border: none;
+    flex-direction: column;
+    background-color: #f5f5f0;
+    max-width: 100vw;
+    height: 800px;
+}
+
+#projects{
+    max-width: 100vw;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    gap: 136px;
+    padding-top: 56px;
+    scroll-behavior: smooth;
+}
+
+.project{
+    scroll-snap-align: center;
+    width: 438px;
+    height: 575px;
+    background-color: #ffffff;
+    border-radius: 26px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     transition: 0.6s;
-
-    i{
-        padding-right: 20px;
-    }
-}
-
-#aboutButton:hover{
-    background-color: #22222270;
-    transform: scale(1.1);
-
-}
-
-#skillsSection{
-    background-image: url(assets/photos/andrew-neel-cckf4TsHAuw-unsplash.jpg);    
-    background-size: cover;   
-}
-
-#overlay{
-    background-color: #ededed99;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    h1{
-        font-size: 4rem;
-        color: #222222;
-        text-transform: uppercase;
-    }
 
     h2{
-        color: #222222;
-        font-size: 2.5rem;
-        padding-top: 100px;
-        padding-bottom: 60px; 
+        font-size: 1.75rem;
+        font-weight: 500;
+        padding-left: 40px;
+        padding-bottom: 24px;
+    }
+
+    h3{
+        font-size: 1.375rem;
+        font-weight: 400;
+        padding-left: 40px;
+        padding-bottom: 8px;
+    }
+
+    h4{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #00000070;
+        padding-left: 40px;
+        padding-bottom: 32px;
+    }
+
+    h5{
+        max-width: 400px;
+        max-height: 100px;
+        font-size: 1rem;
+        font-weight: 400;
+        color: #00000070;
+        padding-left: 40px;
+        padding-bottom: 48px;
+    }
+
+    button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000000;
+        width: 160px;
+        height: 50px;
+        border-radius: 16px;
+        font-size: 1rem;
+        color: #ffffff;
+        cursor: pointer;
+        transition: 0.6s;
+        box-shadow: 0px 4px 4px 0px #00000025;
+        margin-left: 40px;
     }
 }
 
-.ulSkillsItems {
+.project:hover{
+    transform: scale(1.1)
+}
+
+.indicators{
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    gap: 27px;
+    gap: 32px;
 }
 
-.liSkillSection {
-    color: #222222;
-    font-size: 1.5rem;
-    background-color: #a065bb90;
-    display: flex;
-    align-self: center;
-    padding: 10px 10px 10px 10px;
-    border-radius: 10px;
-    transition: 0.6s;
+.dot {
+    width: 16px;
+    height: 16px;
+    background: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0px 4px 4px #00000025;
 }
 
-.liSkillSection:hover{
-    transform: scale(1.1);
-    background-color: #a065bb;
+.dot.active {
+    background: black;
+}
+
+.projectPhoto{
+    width: 400px;
+    height: 237px;
+    padding: 24px 0px 24px 40px;
 }
 
 #contactSection{
-    background-color: #58683e;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    flex-direction: row-reverse;
-}
-    
-#contactPhoto{
-    background-image: url(assets/photos/a3bbf30988e04aeea61ed7d443853497-fotor-ai-art-effects-20250205144122.jpg);
+    max-width: 100vw;
     height: 100vh;
-    width: 40vw;
-    background-size: cover;
-    background-position: center; 
+
 }
 
-#contactContentFlexContainer{
-    width: 60vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    #contactContentFlexItems{
-        width: 65%;
-        max-width: 600px;
-        h1{
-            font-size: 4rem;
-            color: #ededed;
-            text-decoration: underline 2px;
-            text-transform:uppercase;
-            padding-bottom: 40px;
-        }
-    
-        h2{
-            font-size: 1.5rem;
-            color: #ededed;
-            font-weight:200;
-            padding-bottom: 8px;
-        }
-    }
-}
-
-#divEmail{
-    display: flex;
-    font-size: 1.4rem;
-    color: #ededed;
-    font-weight:200;
-    padding-bottom: 10px;
-    padding-top: 58px;
-    p{
+form{
+    label{
+        color: #00000070;
+        font-size: 1rem;
         padding-left: 10px;
     }
-}
 
-#divCellphone{
-    display: flex;
-    font-size: 1.3rem;
-    color: #ededed;
-    font-weight:200;
-    padding-bottom: 10px;
+    input{
+        padding-left: 18px;
+        width: 411px;
+        height: 55px;
+        margin-bottom: 35px;
+        border-radius: 16px;
+        background-color: #f5f5f0;
+    }
 
-    p{
-        padding-left: 8px;
+    input::placeholder{
+        color: #00000060;
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+
+    input:focus::placeholder{
+        color: transparent;
+    }
+
+    textarea::placeholder{
+        color: #00000060;
+        font-size: 0.8rem;
+        font-style: italic;
+    }
+
+    textarea{
+        padding: 24px 0px 0px 18px;
+        width: 411px;
+        height: 185px;
+        margin: 5px 0px 30px 0px;
+        border-radius: 16px;
+        background-color: #f5f5f0;
+    }
+
+    textarea:focus::placeholder{
+        color: transparent;
     }
 }
 
-#divContacButtons{
-    padding-top: 100px;
+#contactBiggerContainer{
     display: flex;
-    gap: 25px; 
+    justify-content: center;
+    max-width: 100vw;
+    height: 640px;
+    padding-top: 162px;
+    gap: 300px;
 }
 
-.contactButtons{
-    font-size: 30px;
-    border-radius: 5px;
-    padding: 8px 8px 8px 8px;
-    cursor: pointer;
-    background-color: #ededed;
-    transition: 0.8s;
+#contactSectionContainer1{
+    max-width:580px;
+    max-height: 304;
+    padding-left: 178px;
 
-    i{
+    #contactPhoto{
+        background-image:url(assets/photos/fhdfhndgjndgn.png);
+        max-width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+    }
+
+    h1{
+        font-size:4.5rem;
+        font-weight:500;
+        color: #000000;
+        letter-spacing:0.125rem;
+        padding-top: 40px; 
+    }
+
+    h2{
+        font-size:1rem;
+        font-weight:400;
+        color: #00000070;
+        padding-top: 22px;
+    }
+
+}
+
+#contactSectionContainer2{
+    max-width:580px;
+    max-height: 304;
+    padding-top: 10px;
+    padding-right: 178px;
+
+    button{
         display: flex;
+        justify-content: center;
         align-items: center;
-        color:#58683e;
-        
+        background-color: #000000;
+        width: 190px;
+        height: 50px;
+        border-radius: 16px;
+        cursor: pointer;
+        transition: 0.6s;
+        box-shadow: 0px 4px 4px 0px #00000025;
+        font-size: 1rem;
+        color: #ffffff;
+    }
+
+    button:hover{
+        transform: scale(1.1);
     }
 }
 
-.contactButtons:hover{
-    transform:scale(1.1);
-    background-color: #ededed99;
+#copyRight{
+    display: flex;
+    align-items: center;
+    background-color: #f5f5f0;
+    height: 226px;
+    max-width: 100vw;
 
-    i{
-        color: #ededed;
+    h1{
+        font-size: 1rem;
+        font-weight: 400;
+        color: #00000070;
+        padding-left: 40px;
     }
 }
 
 @media (orientation: portrait) {
-
-    nav{
-        padding: 18px 45px;
-    
-        #iconCupHot{
-            font-size: 25px;
-        }
-
-        #navBarLinks{
-            font-weight: 330;
-
-            li{
-               padding-left: 50px; 
-            }
-        }
-    }
-
-    #homeSection{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 6rem;
-
-        #homePhoto{            
-            width: 30vh;
-            height: 30vh;
-            border-radius: 50%;
-        }
-
-        #homeContentFlexContainer{
-            text-align: center;
-
-            #homeContentFlexItems{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
-                #h1HomeSection{
-                    font-size: 3rem;
-                }
-            
-                #h2HomeSection{
-                    font-size: 1.35rem;
-                    font-weight: 100;
-                }
-            }
-        }
-    }
-
-    #aboutPhoto{
-        display: none;
-    }
-
-    #aboutContentFlexContainer{
-        width: 100vw;
-    
-        #aboutContentFlexItems{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 80%;
-            
-            h1{
-                font-size: 2.5rem;
-            }
-        
-            p{
-                font-size: 1.2rem;
-                font-weight: 100;
-                padding: 40px 0px 40px 0px;
-                
-            }    
-        }
-    }
-
-    #overlay{
-    
-        h1{
-            font-size: 2.8rem;
-        }
-    
-        h2{
-            font-size: 2rem;
-            padding-top: 60px;
-            padding-bottom: 30px; 
-        }
-    }
-    
-    .ulSkillsItems {
-        max-width: 350px;
-        gap: 25px;
-    }
-    
-    .liSkillSection {
-        font-size: 1.2rem;
-        padding: 9px 9px 9px 9px;
-    }
-
-    #contactSection{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-        
-    #contactPhoto{
-        height: 25vh;
-        width: 25vh;
-        border-radius: 50%;
-        border: solid #ededed 4px;
-    }
-    
-    #contactContentFlexContainer{
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        #contactContentFlexItems{
-            width: 65%;
-            max-width: 600px;
-
-            h1{
-                font-size: 2.8rem;
-                padding-top: 80px;
-                padding-bottom: 40px;
-            }
-        
-            h2{
-                font-size: 1.2rem;
-                font-weight:100;
-            }
-        }
-    }
-    
-    #divEmail{
-        font-size: 1.2rem;
-        font-weight:100;
-        padding-top: 80px;
-        justify-content: center;        
-
-        p{
-            padding-left: 10px;
-        }
-    }
-    
-    #divCellphone{
-        font-size: 1.2rem;
-        font-weight:100;
-        justify-content: center;
-    
-        p{
-            padding-left: 8px;
-        }
-    }
-    
-    #divContacButtons{
-        padding-top: 50px;
-        justify-content: center;
-    }
 }
-
 
 @media (max-width: 770px) {
     nav{
