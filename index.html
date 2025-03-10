@@ -213,20 +213,22 @@
                     <h2>Gostou do meu trabalho? Ficarei feliz em conversar sobre como posso contribuir para sua equipe ou projeto. Entre em contato!</h2>
                 </div>
                 <div id="contactSectionContainer2">
-                    <form>
+                    <form action="https://formsubmit.co/ajax/laisrabellocode@gmail.com"
+                    method="POST"
+                    data-form>
                         <div>
                             <label for="name">Nome:</label>
-                            <input id="name" placeholder="Ex.: Laís Rabello " required/> 
+                            <input id="name" placeholder="Ex.: Laís Rabello " type="text" name="name" required/> 
                         </div>
                         <div>
                             <label for="email">Email:</label>
-                            <input id="email" type="email" placeholder="Ex.: laisrabellocode@gmail.com" required/> 
+                            <input id="email" placeholder="Ex.: laisrabellocode@gmail.com" type="email" name="email" required/> 
                         </div>
                         <div>
                             <label for="message">Mensagem:</label>
-                            <textarea id="message" placeholder="Ex.: Olá, gostei muito do seu trabalho e gostaria de conversar mais!" required></textarea>
+                            <textarea id="message" placeholder="Ex.: Olá, gostei muito do seu trabalho e gostaria de conversar mais!" name="message" required></textarea>
                         </div>
-                        <button>Vamos Conversar</button>
+                        <button type="submit" data-button>Vamos Conversar</button>
                     </form> 
                 </div>
             </div>
