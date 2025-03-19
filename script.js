@@ -45,40 +45,93 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
 //------------------------------------------------------------------------------------------------
+
 // Project-scroll
 document.addEventListener("DOMContentLoaded", () => {
   const projects = document.querySelectorAll(".project");
+  const projectContainer = document.querySelector("#projectContainer2");
   const dots = document.querySelectorAll(".dot");
+  let currentIndex = 0;
+  let isMobile = window.innerWidth < window.innerHeight;
 
-  function showProjects(index) {
-      projects.forEach((project) => (project.style.display = "none")); // Oculta todos os projetos
+  function showProjects() {
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const newIsMobile = screenWidth < screenHeight;
 
-      const start = index * 2; // Cada página exibe 2 projetos
+    // Se o layout mudou, resetar índice
+    if (newIsMobile !== isMobile) {
+      currentIndex = 0;
+      isMobile = newIsMobile;
+    }
+
+    projects.forEach((project) => (project.style.display = "none"));
+
+    if (isMobile) {
+      // Modo mobile: 1 projeto por vez
+      if (projects[currentIndex]) projects[currentIndex].style.display = "block";
+      document.querySelectorAll(".nav-button").forEach(btn => btn.style.display = "block");
+      if (document.querySelector(".indicators")) document.querySelector(".indicators").style.display = "none";
+    } else {
+      // Modo desktop: 2 projetos por vez
+      const start = currentIndex * 2;
       for (let i = start; i < start + 2; i++) {
-          if (projects[i]) projects[i].style.display = "block";
+        if (projects[i]) projects[i].style.display = "block";
       }
+      document.querySelectorAll(".nav-button").forEach(btn => btn.style.display = "none");
+      if (document.querySelector(".indicators")) document.querySelector(".indicators").style.display = "flex";
+    }
 
-      dots.forEach((dot) => dot.classList.remove("active"));
-      dots[index].classList.add("active");
+    // Atualiza os dots
+    dots.forEach(dot => dot.classList.remove("active"));
+    if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+  }
+
+  // Criar botões de navegação se não existirem
+  if (!document.querySelector(".nav-button-prev") && !document.querySelector(".nav-button-next")) {
+    const prevButton = document.createElement("button");
+    const nextButton = document.createElement("button");
+    prevButton.textContent = "←";
+    nextButton.textContent = "→";
+    prevButton.classList.add("nav-button", "nav-button-prev");
+    nextButton.classList.add("nav-button", "nav-button-next");
+
+    projectContainer.appendChild(prevButton);
+    projectContainer.appendChild(nextButton);
+
+    prevButton.addEventListener("click", () => navigate(-1));
+    nextButton.addEventListener("click", () => navigate(1));
+  }
+
+  function navigate(direction) {
+    const totalProjects = projects.length;
+    if (isMobile) {
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = totalProjects - 1;
+      if (currentIndex >= totalProjects) currentIndex = 0;
+    } else {
+      const totalPages = Math.ceil(totalProjects / 2);
+      currentIndex += direction;
+      if (currentIndex < 0) currentIndex = totalPages - 1;
+      if (currentIndex >= totalPages) currentIndex = 0;
+    }
+    showProjects();
   }
 
   dots.forEach((dot, i) => {
-      dot.addEventListener("click", () => {
-          showProjects(i);
-      });
+    dot.addEventListener("click", () => {
+      currentIndex = i;
+      showProjects();
+    });
   });
 
-  showProjects(0); // Exibe os primeiros projetos ao carregar a página
+  window.addEventListener("resize", showProjects);
+
+  showProjects();
 });
 
 //------------------------------------------------------------------------------------------------
 // Form Submit
-
-// const form = document.querySelector('form');
-
-// form.addEventListener('submit', (evento) => {
-//   evento.preventDefault();
-// })
 
 class FormSubmit {
   constructor(settings) {

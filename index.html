@@ -13,20 +13,20 @@
 </head>
 <body>
     <nav>
-       <ul id="navBarLinks">
-            <li><a href="#homeSection">Início</a></li>
-            <li><a href="#aboutSection">Sobre mim</a></li>
-            <li><a href="#projectsSection">Projetos</a></li>
-            <li><a href="#contactSection">Contato</a></li>
-       </ul>
-       <div id="localAndTime">
-            <span id="localization">Rio de Janeiro, Brasil</span>
-            <span id="localTime"></span> 
-       </div>
-       <label id="switch">
-            <input type="checkbox" id="toggleDarkMode">
-            <span id="slider"></span>
-       </label> 
+        <ul id="navBarLinks">
+             <li><a href="#homeSection">Início</a></li>
+             <li><a href="#aboutSection">Sobre mim</a></li>
+             <li><a href="#projectSection">Projetos</a></li>
+             <li><a href="#contactSection">Contato</a></li>
+        </ul>
+        <div id="localAndTime">
+             <span id="localization">Rio de Janeiro, Brasil</span>
+             <span id="localTime"></span> 
+        </div>
+        <label id="switch">
+             <input type="checkbox" id="toggleDarkMode">
+             <span id="slider"></span>
+        </label> 
     </nav>
     <div id="bubbleButtons">
         <button class="bubbleButton" onClick="window.open('https://github.com/laisrabello', 'blank')">
@@ -39,32 +39,34 @@
             <i i class="bi bi-whatsapp"></i>
         </button>
     </div>
-    <div class="container">
-        <section id="homeSection">
-            <div id="heroSection">
-                <div id="heroSectionContainer1">
-                    <div id="homePhoto"></div>
-                    <h1>Olá! Eu sou Laís Rabello</h1>
-                </div>
-                <div id="heroSectionContainer2">
-                    <h2>Desenvolvedora Web</h2>
+    <section id="homeSection">
+        <div id="homeContainer1">
+            <div id="homeContainer1Child1">
+                <div class="homePhoto"></div>
+                <h1>Olá! Eu sou Laís Rabello</h1>
+            </div>
+            <div id="homeContainer1Child2">
+                <div id="homeContainer1Child2Text">
+                    <h2>Desenvolvedora Web.</h2>
                     <h3>Vamos criar experiências digitais incríveis juntos!</h3>
-                    <div id="alignHeroButtons">
-                        <a id="downloadCurriculum" href="source/Lais-Rabello.pdf" download="Lais-Rabello.pdf">
-                            <i class="bi bi-box-arrow-down"></i>
-                            <p>Baixar Currículo</p>
-                        </a>
-                        <a id="seeMyWork" href="#projectsSection">
-                            <p>Veja meu trabalho</p>
-                        </a>
-                    </div>
+                </div>
+                <div id="homeContainer1Child2Buttons">
+                    <a id="downloadCurriculum" href="source/Lais-Rabello.pdf" download="Lais-Rabello.pdf">
+                        <i class="bi bi-box-arrow-down"></i>
+                        <p>Baixar Currículo</p>
+                    </a>
+                    <a id="seeMyWork" href="#projectSection">
+                        <p>Veja meu trabalho</p>
+                    </a>
                 </div>
             </div>
-            <div id="homeSectionPart2">
-                <div id="knowMeBetter">
-                    <h3>Me conheça melhor</h3>
-                    <h4>Resido no Rio de Janeiro, Brasil, e atuo como Desenvolvedora Web Frontend, com experiência em HTML, CSS, JavaScript, Bootstrap, Git e GitHub. Sou formada em Física pela Universidade Federal Fluminense e tenho experiência profissional em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinar me proporcionam habilidades essenciais, como adaptabilidade, resolução de problemas, aprendizado contínuo e gestão de tempo e processos.</h4>
-                </div>
+        </div>
+        <div id="homeContainer2">
+            <div id="homeContainer2Child1">
+                <h4>Me conheça melhor</h4>
+                <p>Resido no Rio de Janeiro, Brasil, e atuo como Desenvolvedora Web Frontend, com experiência em HTML, CSS, JavaScript, Bootstrap, Git e GitHub. Sou formada em Física pela Universidade Federal Fluminense e tenho experiência profissional em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinar me proporcionam habilidades essenciais, como adaptabilidade, resolução de problemas, aprendizado contínuo e gestão de tempo e processos.</p>
+            </div>
+            <div id="homeContainer2Child2">
                 <div class="timeLineContainer1">
                     <ul>
                         <li>
@@ -96,10 +98,18 @@
                         </li>
                     </ul>
                 </div>
-            </div>  
-        </section>
-        <section id="aboutSection">
+            </div>
+        </div>
+    </section>
+    <section id="aboutSection">
+        <div id="aboutSectionMobile">
+            <h4>Me conheça melhor</h4>
+            <p>Resido no Rio de Janeiro, Brasil, e atuo como Desenvolvedora Web Frontend, com experiência em HTML, CSS, JavaScript, Bootstrap, Git e GitHub. Sou formada em Física pela Universidade Federal Fluminense e tenho experiência profissional em Pesquisa Científica e no setor Administrativo. Minha formação e atuação multidisciplinar me proporcionam habilidades essenciais, como adaptabilidade, resolução de problemas, aprendizado contínuo e gestão de tempo e processos.</p>
+        </div>
+        <div id="aboutContainer1">
             <div id="aboutPhoto"></div>
+        </div>
+        <div id="aboutContainer2">
             <div class="timeLineContainer2">
                 <ul>
                     <li>
@@ -161,82 +171,113 @@
                                     <img src="assets/icons/icons8-javascript 1.svg" alt="JavaScript">
                                     <img src="assets/icons/icons8-git 1.svg" alt="Git">
                                     <img src="assets/icons/icons8-github 1.svg" alt="GitHub">
-                            </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                 </ul> 
             </div>
-        </section>
-        <section id="projectsSection">
+        </div>
+    </section>
+    <section id="projectSection">
+        <div id="projectContainer1">
             <h1>Conheça meu trabalho</h1>
-            <div class="carousel">
-                <div id="projectsAndDot">
-                    <div id="projects">
-                        <div class="project">
-                            <img class="projectPhoto" src="assets/photos/Site-Links.png" alt="Projeto 1">
-                            <h2>Site Links</h2>
-                            <h3>Pessoal</h3>
-                            <h4>Janeiro 2025</h4>
-                            <h5>Site que reúne links para minhas redes sociais de forma intuitiva. Desenvolvido com HTML e CSS, utilizando ícones do Bootstrap.</h5>
-                            <button onClick="window.open('https://laisrabello.github.io/projeto-site-links/', 'blank')"> Veja detalhes </button>
-                        </div>
-                        <div class="project">
-                            <img class="projectPhoto" src="assets/photos/Site-Pessoal.png" alt="Projeto 2">
-                            <h2>Portfólio Pessoal</h2>
-                            <h3>Pessoal</h3>
-                            <h4>Fevereiro 2025</h4>
-                            <h5>Site criado para me apresentar e expor meu trabalho como Desenvolvedora Web, incluindo minhas experiências anteriores. Desenvolvido com HTML, CSS e JavaScript, com ícones do Bootstrap.</h5>
-                            <button onClick="window.open('https://laisrabello.github.io/Projeto-Site-Pessoal/','blank')"> Veja detalhes </button>
-                        </div>
-                        <div class="project">
-                            <img class="projectPhoto" src="assets/photos/To-Do-List.png" alt="Projeto 3">
-                            <h2>To Do List</h2>
-                            <h3>Pessoal</h3>
-                            <h4>Fevereiro 2025</h4>
-                            <h5>Site com objetivo de criar uma lista das suas tarefas diárias, podendo exluir e marcar como feita. Desenvolvido com HTML e CSS e JavaScript.</h5>
-                            <button onClick="window.open('https://laisrabello.github.io/Projeto-To-Do-List/', 'blank')">Veja detalhes</button>
-                        </div>
+        </div>
+        <div id="projectContainer2">
+            <div id="projects">
+                <div class="project">
+                    <img class="projectPhoto" src="assets/photos/SiteLinks.png" alt="Projeto 1">
+                    <h2>Site Links</h2>
+                    <h3>Pessoal</h3>
+                    <h4>Janeiro 2025</h4>
+                    <h5>Site que reúne links para minhas redes sociais de forma intuitiva. Desenvolvido com HTML e CSS, utilizando ícones do Bootstrap.</h5>
+                    <button onClick="window.open('https://laisrabello.github.io/projeto-site-links/', 'blank')"> Veja detalhes </button>
+                </div>
+                <div class="project">
+                    <img class="projectPhoto" src="assets/photos/PortfolioVersao2.png" alt="Projeto 2">
+                    <h2>Portfólio Pessoal</h2>
+                    <h3>Pessoal</h3>
+                    <h4>Fevereiro 2025</h4>
+                    <h5>Site criado para me apresentar e expor meu trabalho como Desenvolvedora Web, incluindo minhas experiências anteriores. Desenvolvido com HTML, CSS e JavaScript, com ícones do Bootstrap.</h5>
+                    <button onClick="window.open('https://laisrabello.github.io/Projeto-Site-Pessoal/','blank')"> Veja detalhes </button>
+                </div>
+                <div class="project">
+                    <img class="projectPhoto" src="assets/photos/To-Do-List.png" alt="Projeto 3">
+                    <h2>To Do List</h2>
+                    <h3>Pessoal</h3>
+                    <h4>Fevereiro 2025</h4>
+                    <h5>Site com objetivo de criar uma lista das suas tarefas diárias, podendo exluir e marcar como feita. Desenvolvido com HTML e CSS e JavaScript.</h5>
+                    <button onClick="window.open('https://laisrabello.github.io/Projeto-To-Do-List/', 'blank')">Veja detalhes</button>
+                </div>
+            </div>
+            <div class="indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+    <section id="contactSection">
+        <div id="contactContainer1">
+            <div id="contactContainer1Child1">
+                <div class="homePhoto"></div>
+                <h1>Vamos Conversar!</h1>
+                <h2>Gostou do meu trabalho? Ficarei feliz em conversar sobre como posso contribuir para sua equipe ou projeto. Entre em contato!</h2>
+            </div>
+            <div id="contactContainer1Child2">
+                <form action="https://formsubmit.co/ajax/laisrabellocode@gmail.com"
+                method="POST"
+                data-form>
+                    <div>
+                        <label for="name">Nome:</label>
+                        <input id="name" placeholder="Ex.: Laís Rabello " type="text" name="name" required/> 
                     </div>
-                    <div class="indicators">
-                        <span class="dot active"></span>
-                        <span class="dot"></span>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input id="email" placeholder="Ex.: laisrabellocode@gmail.com" type="email" name="email" required/> 
                     </div>
-                </div>
+                    <div>
+                        <label for="message">Mensagem:</label>
+                        <textarea id="message" placeholder="Ex.: Olá, gostei muito do seu trabalho e gostaria de conversar mais!" name="message" required></textarea>
+                    </div>
+                    <button type="submit" data-button>Vamos Conversar</button>
+                </form>
             </div>
-        </section>
-        <section id="contactSection">
-            <div id="contactBiggerContainer">
-                <div id="contactSectionContainer1">
-                    <div id="contactPhoto"></div>
-                    <h1>Vamos Conversar!</h1>
-                    <h2>Gostou do meu trabalho? Ficarei feliz em conversar sobre como posso contribuir para sua equipe ou projeto. Entre em contato!</h2>
-                </div>
-                <div id="contactSectionContainer2">
-                    <form action="https://formsubmit.co/ajax/laisrabellocode@gmail.com"
-                    method="POST"
-                    data-form>
-                        <div>
-                            <label for="name">Nome:</label>
-                            <input id="name" placeholder="Ex.: Laís Rabello " type="text" name="name" required/> 
-                        </div>
-                        <div>
-                            <label for="email">Email:</label>
-                            <input id="email" placeholder="Ex.: laisrabellocode@gmail.com" type="email" name="email" required/> 
-                        </div>
-                        <div>
-                            <label for="message">Mensagem:</label>
-                            <textarea id="message" placeholder="Ex.: Olá, gostei muito do seu trabalho e gostaria de conversar mais!" name="message" required></textarea>
-                        </div>
-                        <button type="submit" data-button>Vamos Conversar</button>
-                    </form> 
-                </div>
+        </div>
+        <div id="contactContainer2">
+            <h3>© 2025 Laís Rabello. Todos os direitos reservados.</h3>
+            <div id="contactBubbleButtons">
+                <button class="contactBubbleButton" onClick="window.open('https://github.com/laisrabello', 'blank')">
+                    <i i class="bi bi-github"></i>
+                </button>
+                <button class="contactBubbleButton" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/', 'blank')">
+                    <i i class="bi bi-linkedin"></i>
+                </button>
+                <button class="contactBubbleButton" onClick="window.open('https://wa.me/5521969462827', 'blank')">
+                    <i i class="bi bi-whatsapp"></i>
+                </button>
             </div>
-            <div id="copyRight">
-                <h1>© 2025 Laís Rabello. Todos os direitos reservados.</h3>
+        </div>
+    </section>
+    <section id="socialMediaSection">
+        <div id="socialMediaSectionContainer1">
+            <div class="homePhoto"></div>
+            <h1>Outras formas de me encontrar:</h1>
+            <div id="socialMedias">
+                <button class="bubbleButton" onClick="window.open('https://github.com/laisrabello', 'blank')">
+                    <i i class="bi bi-github"></i>
+                </button>
+                <button class="bubbleButton" onClick="window.open('https://www.linkedin.com/in/laispimentelrabello/', 'blank')">
+                    <i i class="bi bi-linkedin"></i>
+                </button>
+                <button class="bubbleButton" onClick="window.open('https://wa.me/5521969462827', 'blank')">
+                    <i i class="bi bi-whatsapp"></i>
+                </button>
             </div>
-        </section>
-    </div>
+        </div>
+        <div id="socialMediaSectionContainer2">
+            <h2>© 2025 Laís Rabello. Todos os direitos reservados.</h2>
+        </div>
+    </section>
     <script src="script.js" ></script>
 </body>
 </html>
